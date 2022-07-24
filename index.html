@@ -4,7 +4,7 @@
 <head>
     <title>KBC</title>
 
-<video id = "loading" src = "loading.mp4" muted autoplay></video>
+
 <script src="path/to/p5.sound.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +21,22 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
+<script>
+    
+</script>
 
 </head>
 
 <body onload="display_content();" background="wallpaper.jpg">
     <center>
-        <video src="background_video.mp4" controls = "false" id="video" autoplay muted></video>
+        <video id = "loading" src = "loading.mp4" muted autoplay></video>
+        <video autoplay>
+            
+                <source id = "video" src="background_video.mp4" type="video/mp4">
+                
+                Your browser does not support the video tag.
+              
+        </video>
         <div id="content"></div>
     </center>
     <script src="main.js"></script>

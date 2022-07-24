@@ -1,10 +1,8 @@
-song = "";
+
 song_status = song.isPlaying();
 console.log(song_status);
 var video = document.getElementById("video");
-video.hide();
 var loading = document.getElementById("loading");
-loading.show();
 var suspense;
 var length = questions.length;
 var random_number = Math.random * length;
@@ -71,29 +69,28 @@ function preload() {
         suspense.setVolume(1);
 }
 function setup() {
-        canvas = createCanvas(100, 100);
-        canvas.position(0, 0);
         
+          
 }
 function draw() {
-        song.play();
+                
 }
 function display_content() {
-        if(song_status == true){
-        loading.hide();
-        video.show();
-        } else{
-        song.play();
-        song.rate(1);
-        loading.show();
-        video.hide();
-        }
+  
         setTimeout(function () {
-                video.hide();
+        document.getElementById("video").hide();
+        document.getElementById("loading").show();
+        },100)
+
+        setTimeout(function () {
+                document.getElementById("loading").remove();
+                document.getElementById("video").style.display.none;
                 document.getElementById("content").innerHTML = content_data;
                 suspense.play();
-        }, 1000);
-}
+        }, 5000);   
+        }
+        
+
 function setQuestion() {
 document.getElementById("question_box").innerHTML = questions[Math.floor(Math.random() * questions.length)];
 }
